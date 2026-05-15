@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <title>Terraform OS | Reactive Forest Intelligence</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              void: 'oklch(7% 0.01 240)',
+              reactor: '#61DAFB',
+              chlorophyll: 'oklch(82% 0.22 150)',
+              mist: 'oklch(100% 0 0 / 0.06)'
+            },
+            fontFamily: {
+              sans: ['Inter Tight', 'sans-serif'],
+              body: ['PP Neue Montreal', 'sans-serif'],
+              serif: ['Iowan Old Style', 'serif']
+            },
+            borderRadius: {
+              squircle: '2.75rem'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute -top-32 left-[10%] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,rgba(97,218,251,.18),transparent_70%)] blur-3xl"></div>
+      <div class="absolute bottom-0 right-[5%] h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(120,255,180,.1),transparent_70%)] blur-3xl"></div>
+    </div>
+
+    <header class="fixed inset-x-0 top-0 z-50 px-6 py-5 md:px-10">
+      <div class="liquid-panel mx-auto flex max-w-[1600px] items-center justify-between rounded-[2rem] px-6 py-4">
+        <%= link_to root_path, class: "flex items-center gap-4" do %>
+          <div class="grid h-12 w-12 place-items-center rounded-[1.6rem] border border-white/10 bg-white/[0.04]">
+            <div class="h-5 w-5 rounded-full bg-reactor shadow-[0_0_30px_rgba(97,218,251,.7)]"></div>
+          </div>
+          <div>
+            <div class="font-sans text-xs uppercase tracking-[0.32em] text-white/45">Terraform OS</div>
+            <div class="text-sm text-white/70">Reactive Forest Intelligence</div>
+          </div>
+        <% end %>
+
+        <nav class="hidden items-center gap-10 font-sans text-[11px] uppercase tracking-[0.24em] text-white/45 lg:flex">
+          <%= link_to "Virtual DOM", virtual_dom_path, class: "transition hover:text-reactor" %>
+          <%= link_to "Forest State", forest_state_path, class: "transition hover:text-reactor" %>
+          <%= link_to "Reactive Villas", reactive_villas_path, class: "transition hover:text-reactor" %>
+          <%= link_to "Biophilic Sync", biophilic_sync_path, class: "transition hover:text-reactor" %>
+        </nav>
+
+        <button class="dew rounded-[1.8rem] px-6 py-3 font-sans text-[11px] uppercase tracking-[0.24em] text-white">
+          Access System
+        </button>
+      </div>
+    </header>
+
+    <%= yield %>
+  </body>
+</html>
